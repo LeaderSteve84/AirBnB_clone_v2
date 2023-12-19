@@ -122,7 +122,7 @@ class HBNBCommand(cmd.Cmd):
             kw_dict = {}
             for arg in argsList[1:]:
                 split_arg = arg.split("=")
-                split_arg[1] = eval(arg_splited[1])
+                split_arg[1] = eval(split_arg[1])
                 if type(split_arg[1]) is str:
                     split_arg[1] = split_arg[1].replace("-", " ").replace('"', '\\"')
                     kw_dict[split_arg[0]] = split_arg[1]
