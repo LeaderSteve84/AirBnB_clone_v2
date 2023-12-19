@@ -124,7 +124,8 @@ class HBNBCommand(cmd.Cmd):
                 split_arg = arg.split("=")
                 split_arg[1] = eval(split_arg[1])
                 if type(split_arg[1]) is str:
-                    split_arg[1] = split_arg[1].replace("-", " ").replace('"', '\\"')
+                    split_arg[1] = split_arg[1].replace(
+                            "-", " ").replace('"', '\\"')
                     kw_dict[split_arg[0]] = split_arg[1]
         except SyntaxError:
             print("** class name missing **")
@@ -328,6 +329,7 @@ class HBNBCommand(cmd.Cmd):
         """ Help information for the update class """
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
