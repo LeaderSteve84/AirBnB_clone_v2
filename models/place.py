@@ -51,7 +51,7 @@ class Place(BaseModel, Base):
             for element in my_list:
                 if (element.place_id == self.id):
                     res.append(element)
-            return(res)
+            return (res)
 
         @property
         def amenities(self, obj=None):
