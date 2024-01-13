@@ -13,7 +13,7 @@ def do_pack():
     generates a .tgz archive
     """
 
-    # use datetime.utcnow() instead of datetime.now() 
+    # use datetime.utcnow() instead of datetime.now()
     # for consistency across time zones
     time = datetime.utcnow()
 
