@@ -4,16 +4,17 @@ folder of your AirBnB Clone repo, using the function do_pack
 """
 
 from datetime import datetime
-from fabric.api import * 
+from fabric.api import *
 
 
 def do_pack():
 
     """
-    generates a .tgz archive 
+    generates a .tgz archive
     """
 
-    # use datetime.utcnow() instead of datetime.now() for consistency across time zones
+    # use datetime.utcnow() instead of datetime.now() 
+    # for consistency across time zones
     time = datetime.utcnow()
 
     # use a consistent date/time format for the archive name
