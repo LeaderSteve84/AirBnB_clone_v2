@@ -25,7 +25,7 @@ def do_pack():
     # use the capture context manager to capture the result of the command
     create = local('tar -cvzf versions/{} web_static'.format(archive))
 
-    if create.failed
+    if create.failed:
         return None
     else:
         return 'versions/{}'.format(archive)
