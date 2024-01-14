@@ -14,7 +14,7 @@ def do_deploy(archive_path):
     """distributes an archive to your web servers"""
     try:
         if not exists(archive_path):
-            print(f"Error: Archive '{archive_path}' not found.")
+            print("Error: Archive '{}' not found.".format(archive_path))
             return False
 
         fileN = archive_path.split("/")[-1]
@@ -30,5 +30,5 @@ def do_deploy(archive_path):
         run('ln -s {}{}/ /data/web_static/current'.format(path, wtht_ext))
         return True
     except Exception as e:
-        print(f"An error occured: {e}")
+        print("An error occured: {}".format(e))
         return False
