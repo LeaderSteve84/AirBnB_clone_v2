@@ -8,6 +8,8 @@ using the function deploy
 from fabric.api import put, run, env, local
 from datetime import datetime
 from os.path import exists, isdir
+import os
+
 env.hosts = ['54.167.187.121', '100.25.3.235']
 
 
@@ -19,7 +21,7 @@ def do_pack():
     # use datetime.utcnow() instead of datetime.now()
     # for consistency across time zones
     time = datetime.utcnow().strftime("%Y%m%d%H%M%S")
-    if isdir("versions") is False:
+    if not isdir("versions"):
         # Use the os.path function to join paths component
         local('mkdir versions')
 
