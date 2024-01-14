@@ -7,33 +7,32 @@ using the function deploy
 
 from fabric.api import put, run, env, local
 from datetime import datetime
-from os.path import exists
+from os.path import exists, isdir
 env.hosts = ['54.167.187.121', '100.25.3.235']
 
 
 def do_pack():
-
     """
     generates a .tgz archive
     """
 
     # use datetime.utcnow() instead of datetime.now()
     # for consistency across time zones
-    time = datetime.utcnow()
+    time = datetime.utcnow().strftime("%Y%m%d%H%M%S")
+    if isdir("versions") is False:
+        # Use the os.path function to join paths component
+        local('mkdir versions')
 
     # use a consistent date/time format for the archive name
-    archive = 'web_static_{}.tgz'.format(time.strftime("%Y%m%d%H%M%S"))
-
-    # Use the os.path function to join paths component
-    local('mkdir -p versions')
+    archive = 'versions/web_static_{}.tgz'.format(time)
 
     # use the capture context manager to capture the result of the command
-    create = local('tar -cvzf versions/{} web_static'.format(archive))
+    create = local('tar -cvzf {} web_static'.format(archive))
 
     if create.failed:
         return None
     else:
-        return 'versions/{}'.format(archive)
+        return archive
 
 
 def do_deploy(archive_path):
