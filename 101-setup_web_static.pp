@@ -1,88 +1,61 @@
-# sets up your web servers for the deployment of web_static
+# web_server_setup.pp
 
-# Nginx config file
-$nginx_config = "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    add_header X-served-By ${hostname};
-    root /var/www/html;
-    index index.html index.htm;
-    location /hbnb_static {
-            alias /data/web_static/current;
-            index index.html index.htm;
-    }
-    location /redirect_me {
-        return 301 https://th3-grOOt.tk;
-    }
-    error_page 404 /404.html;
-    location /404 {
-      root /var/www/html;
-      internal;
-    }
-}"
-
+# Install Nginx
 package { 'nginx':
-  ensure   => 'present',
-  provider => 'apt'
-} ->
-
-file { '/data':
-  ensure => 'directory'
-} ->
-
-file { '/data/web_static':
-  ensure => 'directory'
-} ->
-
-file { '/data/web_static/releases':
-  ensure => 'directory'
-} ->
-
-file { '/data/web_static/releases/test':
-  ensure => 'directory'
-} ->
-
-file { '/data/web_static/shared':
-  ensure => 'directory'
-} ->
-
-file { '/data/web_static/releases/test/index.html':
-  ensure  => 'present',
-  content => "Holberton School puppet\n"
-} ->
-
-file { '/data/web_static/current':
-  ensure => 'link',
-  target => '/data/web_static/releases/test'
-} ->
-
-exec { 'chown -R ubuntu:ubuntu /data/':
-  path => '/usr/bin/':'/usr/local/bin/':'/bin/'
+  ensure => installed,
 }
 
-file { '/var/www':
-  ensure => 'directory'
-} ->
+# Create necessary directories
+file { '/data':
+  ensure  => directory,
+  owner   => 'ubuntu',
+  group   => 'ubuntu',
+  recurse => true,
+}
 
-file { '/var/www/html':
-  ensure => 'directory'
-} ->
+file { ['/data/web_static', '/data/web_static/releases', '/data/web_static/shared', '/data/web_static/releases/test']:
+  ensure  => directory,
+  owner   => 'ubuntu',
+  group   => 'ubuntu',
+}
 
-file { '/var/www/html/index.html':
-  ensure  => 'present',
-  content => "Holberton School Nginx\n"
-} ->
+# Create fake HTML file
+file { '/data/web_static/releases/test/index.html':
+  content => '<html><body>Holberton School Testing Nginx Setup</body></html>',
+  owner   => 'ubuntu',
+  group   => 'ubuntu',
+}
 
-file { '/var/www/html/404.html':
-  ensure  => 'present',
-  content => "Ceci n'est pas une page\n"
-} ->
+# Create symbolic link
+file { '/data/web_static/current':
+  ensure  => link,
+  target  => '/data/web_static/releases/test',
+  force   => true,
+  owner   => 'ubuntu',
+  group   => 'ubuntu',
+}
 
+# Update Nginx configuration
 file { '/etc/nginx/sites-available/default':
-  ensure  => 'present',
-  content => $nginx_config
-} ->
+  content => "server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
 
-exec { 'nginx restart':
-  path => '/etc/init.d/'
+    server_name _;
+
+    location /hbnb_static/ {
+        alias /data/web_static/current/;
+    }
+
+    location / {
+        # Your existing configuration
+    }
+}",
+  notify  => Service['nginx'],
+}
+
+# Restart Nginx
+service { 'nginx':
+  ensure  => running,
+  enable  => true,
 }
