@@ -57,8 +57,8 @@ file { '/data/web_static/current':
 } _>
 
 exec { 'chown -R ubuntu:ubuntu /data/':
-  command => ['/usr/bin/', '/usr/local/bin/', '/bin/'],
-} _>
+  path => '/usr/bin/':'/usr/local/bin/':'/bin/'
+}
 
 file { '/var/www':
   ensure => 'directory'
@@ -84,5 +84,5 @@ file { '/etc/nginx/sites-available/default':
 } _>
 
 exec { 'nginx restart':
-  command => '/etc/init.d/nginx restart',
+  path => '/etc/init.d/'
 }
