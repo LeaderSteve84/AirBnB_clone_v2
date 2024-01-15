@@ -24,37 +24,37 @@ $nginx_config = "server {
 package { 'nginx':
   ensure   => 'present',
   provider => 'apt'
-} _>
+} ->
 
 file { '/data':
   ensure => 'directory'
-} _>
+} ->
 
 file { '/data/web_static':
   ensure => 'directory'
-} _>
+} ->
 
 file { '/data/web_static/releases':
   ensure => 'directory'
-} _>
+} ->
 
 file { '/data/web_static/releases/test':
   ensure => 'directory'
-} _>
+} ->
 
 file { '/data/web_static/shared':
   ensure => 'directory'
-} _>
+} ->
 
 file { '/data/web_static/releases/test/index.html':
   ensure  => 'present',
   content => "Holberton School puppet\n"
-} _>
+} ->
 
 file { '/data/web_static/current':
   ensure => 'link',
   target => '/data/web_static/releases/test'
-} _>
+} ->
 
 exec { 'chown -R ubuntu:ubuntu /data/':
   path => '/usr/bin/':'/usr/local/bin/':'/bin/'
@@ -62,26 +62,26 @@ exec { 'chown -R ubuntu:ubuntu /data/':
 
 file { '/var/www':
   ensure => 'directory'
-} _>
+} ->
 
 file { '/var/www/html':
   ensure => 'directory'
-} _>
+} ->
 
 file { '/var/www/html/index.html':
   ensure  => 'present',
   content => "Holberton School Nginx\n"
-} _>
+} ->
 
 file { '/var/www/html/404.html':
   ensure  => 'present',
   content => "Ceci n'est pas une page\n"
-} _>
+} ->
 
 file { '/etc/nginx/sites-available/default':
   ensure  => 'present',
   content => $nginx_config
-} _>
+} ->
 
 exec { 'nginx restart':
   path => '/etc/init.d/'
