@@ -14,9 +14,9 @@ file { '/data':
 }
 
 file { ['/data/web_static', '/data/web_static/releases', '/data/web_static/shared', '/data/web_static/releases/test']:
-  ensure  => directory,
-  owner   => 'ubuntu',
-  group   => 'ubuntu',
+  ensure => directory,
+  owner  => 'ubuntu',
+  group  => 'ubuntu',
 }
 
 # Create fake HTML file
@@ -28,11 +28,11 @@ file { '/data/web_static/releases/test/index.html':
 
 # Create symbolic link
 file { '/data/web_static/current':
-  ensure  => link,
-  target  => '/data/web_static/releases/test',
-  force   => true,
-  owner   => 'ubuntu',
-  group   => 'ubuntu',
+  ensure => link,
+  target => '/data/web_static/releases/test',
+  force  => true,
+  owner  => 'ubuntu',
+  group  => 'ubuntu',
 }
 
 # Update Nginx configuration
@@ -56,6 +56,6 @@ file { '/etc/nginx/sites-available/default':
 
 # Restart Nginx
 service { 'nginx':
-  ensure  => running,
-  enable  => true,
+  ensure => running,
+  enable => true,
 }
