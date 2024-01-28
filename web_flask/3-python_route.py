@@ -28,9 +28,11 @@ def c_route(text):
     return 'C {}'.format(formatted_text)
 
 
+@app.route('/python/', defaults={'text':'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python_(text='is cool'):
+def python_route(text):
     """display “Python ”, followed by the value of the text variable"""
+    # replace underscore (_) symbols with a space
     formatted_text = text.replace('_', ' ')
     return 'Python {}'.format(formatted_text)
 
