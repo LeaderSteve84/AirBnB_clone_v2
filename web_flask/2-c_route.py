@@ -19,11 +19,13 @@ def hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def funisc(text):
+def c_route(text):
     """display “C ” followed by the value of the text variable
     (replace underscore _ symbols with a space )
     """
-    return 'C' + text.replace('_', ' ')
+    # replace underscore (_) symbols with a space
+    formatted_text = text.replace('_', ' ')
+    return 'C {}'.format(formatted_text)
 
 
 if __name__ == "__main__":
