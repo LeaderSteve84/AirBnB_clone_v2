@@ -106,8 +106,8 @@ guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.0-hello_route
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000 ; echo "" | cat -e
-Hello HBNB!$
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000 ; echo "" | cat -e
+Hello HBNB!\$
 guillaume@ubuntu:~$ 
 ### Repo:
 
@@ -129,9 +129,9 @@ guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.1-hbnb_route
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/hbnb ; echo "" | cat -e
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/hbnb ; echo "" | cat -e
 HBNB$
-guillaume@ubuntu:~$ 
+guillaume@ubuntu:~\$ 
 ##### Repo:
 
 GitHub repository: AirBnB_clone_v2
@@ -153,16 +153,16 @@ guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.2-c_route
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/c/is_fun ; echo "" | cat -e
-C is fun$
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/c/cool ; echo "" | cat -e
-C cool$
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/c/is_fun ; echo "" | cat -e
+C is fun\$
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/c/cool ; echo "" | cat -e
+C cool\$
 guillaume@ubuntu:~$ curl 0.0.0.0:5000/c
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <title>404 Not Found</title>
 <h1>Not Found</h1>
 <p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
-guillaume@ubuntu:~$ 
+guillaume@ubuntu:~\$ 
 ###### Repo:
 
 GitHub repository: AirBnB_clone_v2
@@ -186,13 +186,13 @@ guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.3-python_route
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl -Ls 0.0.0.0:5000/python/is_magic ; echo "" | cat -e
+guillaume@ubuntu:~\$ curl -Ls 0.0.0.0:5000/python/is_magic ; echo "" | cat -e
 Python is magic$
-guillaume@ubuntu:~$ curl -Ls 0.0.0.0:5000/python ; echo "" | cat -e
-Python is cool$
-guillaume@ubuntu:~$ curl -Ls 0.0.0.0:5000/python/ ; echo "" | cat -e
-Python is cool$
-guillaume@ubuntu:~$ 
+guillaume@ubuntu:~\$ curl -Ls 0.0.0.0:5000/python ; echo "" | cat -e
+Python is cool\$
+guillaume@ubuntu:~\$ curl -Ls 0.0.0.0:5000/python/ ; echo "" | cat -e
+Python is cool\$
+guillaume@ubuntu:~\$ 
 ##### Repo:
 
 GitHub repository: AirBnB_clone_v2
@@ -217,19 +217,19 @@ guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.4-number_route
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number/89 ; echo "" | cat -e
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number/89 ; echo "" | cat -e
 89 is a number$
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number/8.9 
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number/8.9 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <title>404 Not Found</title>
 <h1>Not Found</h1>
 <p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number/python 
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number/python 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <title>404 Not Found</title>
 <h1>Not Found</h1>
 <p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
-guillaume@ubuntu:~$ 
+guillaume@ubuntu:~\$ 
 ##### Repo:
 
 GitHub repository: AirBnB_clone_v2
@@ -256,7 +256,7 @@ guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.5-number_template
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/89 ; echo ""
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number_template/89 ; echo ""
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
@@ -266,18 +266,18 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/89 ; echo ""
         <H1>Number: 89</H1>
     </BODY>
 </HTML>
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/8.9 
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number_template/8.9 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <title>404 Not Found</title>
 <h1>Not Found</h1>
 <p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/python 
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number_template/python 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <title>404 Not Found</title>
 <h1>Not Found</h1>
 <p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
-guillaume@ubuntu:~$ 
-Repo:
+guillaume@ubuntu:~\$ 
+##### Repo:
 
 GitHub repository: AirBnB_clone_v2
 Directory: web_flask
@@ -305,7 +305,7 @@ guillaume@ubuntu:~/AirBnB_v2$ python3 -m web_flask.6-number_odd_or_even
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_odd_or_even/89 ; echo ""
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number_odd_or_even/89 ; echo ""
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
@@ -315,7 +315,7 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_odd_or_even/89 ; echo ""
         <H1>Number: 89 is odd</H1>
     </BODY>
 </HTML>
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_odd_or_even/32 ; echo ""
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number_odd_or_even/32 ; echo ""
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
@@ -325,7 +325,7 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_odd_or_even/32 ; echo ""
         <H1>Number: 32 is even</H1>
     </BODY>
 </HTML>
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_odd_or_even/python 
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/number_odd_or_even/python 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <title>404 Not Found</title>
 <h1>Not Found</h1>
@@ -460,7 +460,7 @@ guillaume@ubuntu:~/AirBnB_v2$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_p
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/states_list ; echo ""
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/states_list ; echo ""
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
@@ -499,7 +499,7 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/states_list ; echo ""
         </UL>
     </BODY>
 </HTML>
-guillaume@ubuntu:~$ 
+guillaume@ubuntu:~\$ 
 ##### Repo:
 
 GitHub repository: AirBnB_clone_v2
@@ -537,7 +537,7 @@ guillaume@ubuntu:~/AirBnB_v2$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_p
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/cities_by_states ; echo ""
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/cities_by_states ; echo ""
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
@@ -739,7 +739,7 @@ guillaume@ubuntu:~/AirBnB_v2$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_p
 ....
 In another tab:
 
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/states ; echo ""
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/states ; echo ""
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
@@ -780,7 +780,7 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/states ; echo ""
 
     </BODY>
 </HTML>
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/states/421a55f4-7d82-47d9-b54c-a76916479552 ; echo ""
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/states/421a55f4-7d82-47d9-b54c-a76916479552 ; echo ""
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
@@ -804,7 +804,7 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/states/421a55f4-7d82-47d9-b54c-a7691647955
 
     </BODY>
 </HTML>
-guillaume@ubuntu:~$ curl 0.0.0.0:5000/states/holberton ; echo ""
+guillaume@ubuntu:~\$ curl 0.0.0.0:5000/states/holberton ; echo ""
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
@@ -816,7 +816,7 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/states/holberton ; echo ""
 
     </BODY>
 </HTML>
-guillaume@ubuntu:~$ 
+guillaume@ubuntu:~\$ 
 ##### Repo:
 
 GitHub repository: AirBnB_clone_v2
