@@ -14,32 +14,43 @@ AirBnB clone
 #### Resources
 Read or watch:
 
-What is a Web Framework?
-A Minimal Application
-Routing (except “HTTP Methods”)
-Rendering Templates
-Synopsis
-Variables
-Comments
-Whitespace Control
-List of Control Structures (read up to “Call”)
-Flask
-Jinja
+<li><a href="https://intelegain-technologies.medium.com/what-are-web-frameworks-and-why-you-need-them-c4e8806bd0fb">What is a Web Framework?</a></li>
+
+<li><a href="https://flask.palletsprojects.com/en/2.3.x/quickstart/#a-minimal-application"> Minimal Application</a></li>
+
+<li><a href="https://flask.palletsprojects.com/en/2.3.x/quickstart/#routing">Routing (except “HTTP Methods”)</a></li>
+
+<li><a href="https://flask.palletsprojects.com/en/2.3.x/quickstart/#rendering-templates">Rendering Templates</a></li>
+
+<li><a href="https://jinja.palletsprojects.com/en/2.9.x/templates/#synopsis">Synopsis</a></li>
+
+<li><a href="https://jinja.palletsprojects.com/en/2.9.x/templates/#variables">Variables</a></li>
+
+<li><a href="https://jinja.palletsprojects.com/en/2.9.x/templates/#comments">Comments</a></li>
+
+<li><a href="https://jinja.palletsprojects.com/en/2.9.x/templates/#whitespace-control">Whitespace Control</a></li>
+
+<li><a href="https://jinja.palletsprojects.com/en/2.9.x/templates/#list-of-control-structures">List of Control Structures (read up to “Call”)</a></li>
+
+<li><a href="https://palletsprojects.com/p/flask/">Flask</a></li>
+
+<li><a href="https://jinja.palletsprojects.com/en/2.9.x/templates/">Jinja</a></li>
+
 Recommended YouTube playlist to get you started
 
 ##### Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 #### General
-What is a Web Framework
-How to build a web framework with Flask
-How to define routes in Flask
-What is a route
-How to handle variables in a route
-What is a template
-How to create a HTML response in Flask by using a template
-How to create a dynamic template (loops, conditions…)
-How to display in HTML data from a MySQL database
+<li>What is a Web Framework</li>
+<li>How to build a web framework with Flask</li>
+<li>How to define routes in Flask</li>
+<li>What is a route</li>
+<li>How to handle variables in a route</li>
+<li>What is a template</li>
+<li>How to create a HTML response in Flask by using a template</li>
+<li>How to create a dynamic template (loops, conditions…)</li>
+<li>How to display in HTML data from a MySQL database</li>
 Copyright - Plagiarism
 You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
 You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
