@@ -12,22 +12,30 @@ import shlex
 class State(BaseModel, Base):
     """ State class
     """
-    __tablename__ = "states"
-    name = Column(String(128), nullable=False)
-    cities = relationship(
-            "City", cascade='all, delete, delete-orphan', backref="state")
+    if models.storage_t == "db":
+        __tablename__ = "states"
+        name = Column(String(128), nullable=False)
+        cities = relationship(
+                "City", cascade='all, delete, delete-orphan', backref="state")
+    else:
+        name = ""
 
-    @property
-    def cities(self):
-        all_obj = models.storage.all()
-        my_list = []
-        res = []
-        for key in all_obj:
-            city = key.replace('.', ' ')
-            city = shlex.split(city)
-            if (city[0] == 'City'):
-                my_list.append(all_obj[key])
-        for element in my_list:
-            if (element.state_id == self.id):
-                res.append(element)
-        return(res)
+    def __init__(self, *args, **kwargs):
+        """initializes state"""
+        super().__init__(*args, **kwargs):
+
+    if models.storage_t != "db":
+        @property
+        def cities(self):
+            all_obj = models.storage.all()
+            my_list = []
+            res = []
+            for key in all_obj:
+                city = key.replace('.', ' ')
+                city = shlex.split(city)
+                if (city[0] == 'City'):
+                    my_list.append(all_obj[key])
+            for element in my_list:
+                if (element.state_id == self.id):
+                    res.append(element)
+            return(res)
