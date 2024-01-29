@@ -22,7 +22,7 @@ class State(BaseModel, Base):
 
     def __init__(self, *args, **kwargs):
         """initializes state"""
-        super().__init__(*args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     if models.storage_t != "db":
         @property
@@ -38,4 +38,4 @@ class State(BaseModel, Base):
             for element in my_list:
                 if (element.state_id == self.id):
                     res.append(element)
-            return(res)
+            return (res)
